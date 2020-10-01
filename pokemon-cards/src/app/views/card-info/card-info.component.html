@@ -1,0 +1,33 @@
+<h1>Informação do card</h1>
+
+<p *ngIf="card">{{ card.id }}</p>
+<p *ngIf="card">{{ card.name }}</p>
+<p *ngIf="card">{{ card.imageUrl }}</p>
+<p *ngIf="card">{{ card.types }}</p>
+
+<h2>Ataques</h2>
+<ul *ngIf="card">
+  <li *ngFor="let attack of card.attacks">
+    <p>{{ attack.name }}</p>
+    <p>{{ attack.convertedEnergyCost }}</p>
+    <p>{{ attack.damage }}</p>
+    <p>{{ attack.text }}</p>
+  </li>
+</ul>
+
+<h2>Fraquezas</h2>
+<ul *ngIf="card">
+  <li *ngFor="let weakness of card.weaknesses">
+    <p>{{ weakness.type }}</p>
+  </li>
+</ul>
+
+<h2>Resistências</h2>
+<ul *ngIf="card">
+  <li *ngFor="let resistance of card.resistances">
+    <p>{{ resistance.type }}</p>
+  </li>
+</ul>
+
+
+<button (click)="return()">Voltar</button>

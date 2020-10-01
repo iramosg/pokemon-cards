@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let card of cards">
+    <a routerLink="/cards/{{ card.id }}">{{ card.name }}</a>
+    {{ card.imageUrl }}
+    {{ card.id }}
+    {{ card.types }}
+  </li>
+</ul>
