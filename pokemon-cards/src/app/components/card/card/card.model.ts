@@ -2,7 +2,7 @@ export interface Card {
   id: string,
   name: string,
   imageUrl: string,
-  types: [],
+  types?: [],
   attacks?: [],
   weaknesses?: [],
 }

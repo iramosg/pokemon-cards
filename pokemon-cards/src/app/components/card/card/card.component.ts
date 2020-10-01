@@ -1,5 +1,5 @@
 import { CardService } from './../card.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Card } from './card.model';
 
 @Component({
@@ -9,15 +9,11 @@ import { Card } from './card.model';
 })
 export class CardComponent implements OnInit {
 
-  cards: Card[]
-
-  constructor(private cardService: CardService) { }
+  @Input() card: Card;
+  
+  constructor() { }
 
   ngOnInit(): void {
-    this.cardService.listAll().subscribe(cards => {
-      this.cards = cards;
-      console.log(cards);
-    });
   }
 
 }

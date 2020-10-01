@@ -14,7 +14,7 @@ const routes: Routes = [
     component: CardInfoComponent
   },
   {
-    path: ":name",
+    path: "search",
     component: SearchComponent
   }
 ];

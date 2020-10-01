@@ -31,10 +31,10 @@ export class CardService {
     );
   }
 
-  searchByName(name: string): Observable<Card> {
+  searchByName(name: string): Observable<Card[]> {
     const url = `${this.baseUrl}/?name=${name}`;
     return this.http.get<Card>(url).pipe(
-      map(result => result["card"])
+      map(result => result["cards"])
     );
   }
 }
