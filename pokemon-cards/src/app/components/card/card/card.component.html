@@ -1,8 +1,12 @@
-<ul>
-  <li>
-    <a routerLink="/cards/{{ card.id }}">{{ card.name }}</a>
-    {{ card.imageUrl }}
-    {{ card.id }}
-    {{ card.types }}
-  </li>
-</ul>
+<div id="card">
+  <div class="container">
+    <div class="controller">
+      <a routerLink="/cards/{{ card.id }}" class="card__item">
+        <p class="card__item__name">{{ card.name }}</p>
+        <img [src]="card.imageUrl" [alt]="card.name" class="card__item__image" *ngIf="card.imageUrl">
+        <p class="card__item__id"><strong>ID</strong> {{ card.id }}</p>
+        <p class="card__item__types" *ngIf="card.types"><strong>Tipo</strong> {{ card.types }}</p>
+      </a>  
+    </div>
+  </div>
+</div>

@@ -1,33 +1,66 @@
-<h1>Informação do card</h1>
+<div id="card-info">
+  <div class="container">
+    <div class="controller">
+      <div class="card-info__title">
+        <h1>Informação do card</h1>
+      </div>
+      
+      <div class="card-info__details">
+        <div class="card-info__details__image">
+          <img [src]="card.imageUrl" [alt]="card.name" *ngIf="card.imageUrl">
+        </div>
+        
+        <div class="card-info__details__items">
+          
+          <div class="card-info__details__items__general">
+            <p class="card-info__paragraph" *ngIf="card"><strong>ID</strong>{{ card.id }}</p>
+            <p class="card-info__paragraph" *ngIf="card"><strong>Nome</strong>{{ card.name }}</p>
+            <p class="card-info__paragraph" *ngIf="card"><strong>Tipo</strong>{{ card.types }}</p>
+          </div>
+          
+          <div class="card-info__details__items__infos">
+            <h2 class="card-info__details__items__infos__title">Ataques</h2>
+            <ul *ngIf="card" class="card-info__details__items__infos__list">
+              <li *ngFor="let attack of card.attacks" class="card-info__details__items__infos__list__item">
+                <p class="card-info__paragraph">
+                  <strong>Nome do ataque</strong> {{ attack.name }}
+                </p>
+                <p class="card-info__paragraph">
+                  <strong>Mana</strong> {{ attack.convertedEnergyCost }}
+                </p>
+                <p class="card-info__paragraph">
+                  <strong>Dano</strong> {{ attack.damage }}
+                </p>
+                <p class="card-info__paragraph">
+                  <strong>Descrição</strong> {{ attack.text }}
+                </p>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="card-info__details__items__infos">
+            <h2 class="card-info__details__items__infos__title">Fraquezas</h2>
+            <ul *ngIf="card" class="card-info__details__items__infos__list">
+              <li *ngFor="let weakness of card.weaknesses" class="card-info__details__items__infos__list__item">
+                <p class="card-info__paragraph">{{ weakness.type }}</p>
+              </li>
+            </ul>
+            
+          </div>
+          
+          <div class="card-info__details__items__infos">
+            <h2 class="card-info__details__items__infos__title">Resistências</h2>
+            <ul *ngIf="card" class="card-info__details__items__infos__list">
+              <li *ngFor="let resistance of card.resistances" class="card-info__details__items__infos__list__item">
+                <p class="card-info__paragraph">{{ resistance.type }}</p>
+              </li>
+            </ul>
+          </div>
 
-<p *ngIf="card">{{ card.id }}</p>
-<p *ngIf="card">{{ card.name }}</p>
-<p *ngIf="card">{{ card.imageUrl }}</p>
-<p *ngIf="card">{{ card.types }}</p>
-
-<h2>Ataques</h2>
-<ul *ngIf="card">
-  <li *ngFor="let attack of card.attacks">
-    <p>{{ attack.name }}</p>
-    <p>{{ attack.convertedEnergyCost }}</p>
-    <p>{{ attack.damage }}</p>
-    <p>{{ attack.text }}</p>
-  </li>
-</ul>
-
-<h2>Fraquezas</h2>
-<ul *ngIf="card">
-  <li *ngFor="let weakness of card.weaknesses">
-    <p>{{ weakness.type }}</p>
-  </li>
-</ul>
-
-<h2>Resistências</h2>
-<ul *ngIf="card">
-  <li *ngFor="let resistance of card.resistances">
-    <p>{{ resistance.type }}</p>
-  </li>
-</ul>
-
-
-<button (click)="return()">Voltar</button>
+          <button (click)="return()">Voltar</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

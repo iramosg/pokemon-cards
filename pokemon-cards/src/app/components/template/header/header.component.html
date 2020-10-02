@@ -1,3 +1,23 @@
-<ul>
-  <li>Início</li>
-</ul>
+<header id="header">
+  <div class="container">
+    <div class="controller">
+      <div class="header__title">
+        <a routerLink="/" class="header__title__link">Pokémon Cards</a>
+        <p>Que Card Pokémon você está procurando?</p>
+        <span>Baseado na <a href="https://pokemontcg.io/">API Pokémon TCG</a></span>
+      </div>
+      
+      <div class="header__search">
+        <h3>Utilize a busca abaixo e encontre o que deseja.</h3>
+
+        <div class="header__search__form_group">
+          <form action="/search" method="GET">
+            <input type="text" name="name" id="name" required>
+            <button>Gotcha!</button>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</header>

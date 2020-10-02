@@ -11,12 +11,14 @@ import { Card } from 'src/app/components/card/card/card.model';
 export class SearchComponent implements OnInit {
 
   cards: Card[]
+  queryParam: string;
 
   constructor(private cardService: CardService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
     const { name } = this.route.snapshot.queryParams;
+    this.queryParam = name;
     this.cardService.searchByName(name).subscribe(cards => {
       this.cards = cards;
       console.log(cards);

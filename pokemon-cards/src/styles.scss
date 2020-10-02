@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../scss/_variables";
+
+* { margin: 0px; padding: 0px; font-family: 'Source Sans Pro', sans-serif; }
+
+html {
+  height: 100%;
+  // box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: $background-normal;
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 6rem;
+}

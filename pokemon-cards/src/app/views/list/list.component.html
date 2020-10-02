@@ -1,5 +1,14 @@
-<h1>Lista de cards</h1>
+<section id="card-list">
+  <div class="container">
+    <div class="controller">
+      
+      <div class="card-list__title">
+        <h1>Lista de cards</h1>
+      </div>
 
-<div *ngFor="let card of cards">
-  <app-card [card]="card"></app-card>
-</div>
+      <div class="card-list__list">
+        <app-card [card]="card" *ngFor="let card of cards" class="card-list__list__item"></app-card>
+      </div>
+    </div>
+  </div>
+</section>
